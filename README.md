@@ -1,7 +1,9 @@
 # dashboard-covid-espania
-Dashboard de Python hecho con Dash.
+Dashboard de Python hecho con Dash. Url: https://coronavirus-resumen.herokuapp.com/
 
 Obtiene los datos de la web de la Johns Hopkins University https://coronavirus.jhu.edu/
+
+Mi web personal donde publico sobre ciencia de datos: https://machinelearningparatodos.com/
 
 ## PARA PROBAR EN LOCAL
 1- Instalar dependencias
