@@ -343,6 +343,8 @@ app.layout = html.Div([
                          selected_style=ESTILO_SELECCIONADA),
                  dcc.Tab(label='Consejos básicos', id='tab5',value='pestania-consejos', style=ESTILO_PESTANIA,
                          selected_style=ESTILO_SELECCIONADA),
+                 dcc.Tab(label='Análisis 5/5/2020', id='tab6',value='pestania-analisis', style=ESTILO_PESTANIA,
+                         selected_style=ESTILO_SELECCIONADA),
              ], style=ESTILO_PESTANIAS),
     # Inserto el contenido de la pestaña seleccionada
     html.Div(id='contenido-pestanias'),
@@ -567,6 +569,13 @@ def render_content(tab):
                                   go.Scatter(x=PATOLOGIAS,y=RATIOS_PATOLOGIAS)],
                                  layout = go.Layout(margin=dict(t=10), template=PLANTILLA,
                                                     yaxis_title="Tasa de mortalidad (%)",showlegend=False))),])
+    elif tab == 'pestania-analisis':
+        return html.Div(children=[
+            html.Br(),
+            html.Div(children='''Este es un análisis que hice para la asociación Women in Big Data Madrid''',
+                style = {'font-size':20,'font-family': "Helvetica Neue"}),
+            html.Br(),
+            html.Div(html.Iframe(id="embedded-pdf", src="assets/covid19_5_mayo_2020.pdf",style={'width': '80%', 'height':800, 'padding-left':'10%', 'border': 'white'}))
     # Pestaña de consejos
     elif tab == 'pestania-consejos':
         return html.Div(children=[
