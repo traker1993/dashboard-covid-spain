@@ -99,7 +99,7 @@ def render_footer():
             id='footer-copyright',
             className='container-fluid text-center',
             children=[
-                html.Div(children='''V 1.0 por: Álvaro Gonzalo''',
+                html.Div(children='''Por: Álvaro Gonzalo''',
                         style = {'font-size':16,'font-family': "Helvetica Neue",
                                 'color':'#ffffff'}),
                 dcc.Link('MachineLearningParaTodos.com', href='https://machinelearningparatodos.com/',
@@ -572,9 +572,19 @@ def render_content(tab):
     elif tab == 'pestania-analisis':
         return html.Div(children=[
             html.Br(),
-            html.Div(children='''Este es un análisis que hice para la asociación Women in Big Data Madrid''', style = {'font-size':20,'font-family': "Helvetica Neue"}),
+            html.H4(children='Contexto:', 
+                    style = {'font-weight': 'bold','font-family': "Helvetica Neue"}),
+
             html.Br(),
-            html.Div(html.Iframe(id="embedded-pdf", src="assets/covid19_5_mayo_2020.pdf",style={'width': '80%', 'height':800, 'padding-left':'10%', 'border': 'white'}))])
+            html.Div(children='''Este es un análisis que hice para la asociación Women in Big Data Madrid, en el que abordaba un análisis del covid-19 desde un punto
+                de vista algo más cuantitativo e informativo. Unas semanas después el informe de serología estimó un 5 por ciento de contagios... mi estimación de entre 
+                1.25-5 millones desgraciadamente no estaba mal encaminada. Esto significaría que la inmunidad de grupo está lejos de conseguirse, alcanzándose 
+                teóricamente sobre el 60 por ciento de población total.''', style = {'font-size':20,'font-family': "Helvetica Neue"}),
+            html.Br(),
+            html.Div(html.Iframe(id="embedded-pdf", src="assets/covid19_5_mayo_2020.pdf",style={'width': '80%', 'height':800, 'padding-left':'10%', 'border': 'white'})),
+            html.Br(),
+            html.Br()
+            ])
     elif tab == 'pestania-consejos':
         return html.Div(children=[
             html.Br(),
@@ -623,4 +633,4 @@ if __name__ == '__main__':
     # Opción en local
     # app.run_server(debug=True, host='0.0.0.0', use_reloader=False)
     # Opción en Heroku
-    app.run_server(debug=True) 
+    app.run_server(debug=False) 
