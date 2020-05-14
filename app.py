@@ -572,11 +572,9 @@ def render_content(tab):
     elif tab == 'pestania-analisis':
         return html.Div(children=[
             html.Br(),
-            html.Div(children='''Este es un análisis que hice para la asociación Women in Big Data Madrid''',
-                style = {'font-size':20,'font-family': "Helvetica Neue"}),
+            html.Div(children='''Este es un análisis que hice para la asociación Women in Big Data Madrid''', style = {'font-size':20,'font-family': "Helvetica Neue"}),
             html.Br(),
-            html.Div(html.Iframe(id="embedded-pdf", src="assets/covid19_5_mayo_2020.pdf",style={'width': '80%', 'height':800, 'padding-left':'10%', 'border': 'white'}))
-    # Pestaña de consejos
+            html.Div(html.Iframe(id="embedded-pdf", src="assets/covid19_5_mayo_2020.pdf",style={'width': '80%', 'height':800, 'padding-left':'10%', 'border': 'white'}))])
     elif tab == 'pestania-consejos':
         return html.Div(children=[
             html.Br(),
